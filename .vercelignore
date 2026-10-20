@@ -1,0 +1,15 @@
+/.git/
+/.env
+/.env.*
+/node_modules/
+/vendor/
+/tests/
+/database/*.sqlite
+/database/*.sqlite-*
+/public/hot
+/storage/logs/*
+/storage/app/private/backups/
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/data/*
+/bootstrap/cache/*.php

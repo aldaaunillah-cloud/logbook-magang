@@ -2,23 +2,42 @@
 
 declare(strict_types=1);
 
-// Blade membutuhkan folder yang dapat ditulis saat aplikasi berjalan.
-$compiledViews = sys_get_temp_dir() . '/logbook-magang/views';
+// Siapkan folder sementara yang dapat ditulis di Vercel.
+$temporaryPath = sys_get_temp_dir() . '/logbook-magang';
 
-if (
-    ! is_dir($compiledViews)
-    && ! mkdir($compiledViews, 0755, true)
-    && ! is_dir($compiledViews)
-) {
-    http_response_code(500);
+$directories = [
+    $temporaryPath,
+    $temporaryPath . '/views',
+    $temporaryPath . '/bootstrap',
+];
 
-    exit('Folder sementara aplikasi tidak dapat dibuat.');
+foreach ($directories as $directory) {
+    if (
+        ! is_dir($directory)
+        && ! mkdir($directory, 0755, true)
+        && ! is_dir($directory)
+    ) {
+        http_response_code(500);
+
+        exit('Folder sementara aplikasi tidak dapat dibuat.');
+    }
 }
 
-putenv('VIEW_COMPILED_PATH=' . $compiledViews);
+// Atur lokasi cache sebelum Laravel dimuat.
+$environment = [
+    'VIEW_COMPILED_PATH' => $temporaryPath . '/views',
+    'APP_PACKAGES_CACHE' => $temporaryPath . '/bootstrap/packages.php',
+    'APP_SERVICES_CACHE' => $temporaryPath . '/bootstrap/services.php',
+    'APP_CONFIG_CACHE' => $temporaryPath . '/bootstrap/config.php',
+    'APP_EVENTS_CACHE' => $temporaryPath . '/bootstrap/events.php',
+    'APP_ROUTES_CACHE' => $temporaryPath . '/bootstrap/routes.php',
+];
 
-$_ENV['VIEW_COMPILED_PATH'] = $compiledViews;
-$_SERVER['VIEW_COMPILED_PATH'] = $compiledViews;
+foreach ($environment as $name => $value) {
+    putenv($name . '=' . $value);
 
-// Jalankan aplikasi melalui entry point Laravel.
+    $_ENV[$name] = $value;
+    $_SERVER[$name] = $value;
+}
+
 require dirname(__DIR__) . '/public/index.php';

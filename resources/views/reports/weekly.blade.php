@@ -9,7 +9,7 @@
     <section class="journal-hero reveal relative overflow-hidden rounded-[28px] px-6 py-8 sm:px-10 sm:py-10 lg:px-12">
         <div class="relative z-10 flex flex-wrap items-center justify-between gap-4"><p class="eyebrow text-[#491609]">02 / The weekly edit</p><span class="rounded-full border border-[#491609]/30 px-3 py-1.5 text-[10px] font-semibold text-[#491609]">REKAP MINGGU BERJALAN</span></div>
         <div class="relative z-10 mt-8 flex flex-wrap items-end justify-between gap-8">
-            <div><h1 class="text-[clamp(2.5rem,6vw,5rem)] leading-[1.08] font-extrabold tracking-[-0.065em] text-[#fff6e9]">{{ $period['label'] }}<span class="text-[#541b10]">.</span></h1><p class="mt-4 text-xs font-semibold text-[#481709] sm:text-sm">{{ $period['range'] }}</p><p class="mt-3 max-w-lg text-xs leading-6 text-[#481709]">Kegiatan yang kamu catat, terkumpul menjadi satu cerita.</p></div>
+            <div><h1 class="text-[clamp(2.5rem,6vw,5rem)] leading-[1.08] font-extrabold tracking-[-0.065em] text-[#fff6e9]">{{ $period['label'] }}</h1><p class="mt-4 text-xs font-semibold text-[#481709] sm:text-sm">{{ $period['range'] }}</p><p class="mt-3 max-w-lg text-xs leading-6 text-[#481709]">Kegiatan yang kamu catat, terkumpul menjadi satu cerita.</p></div>
             <a href="{{ route('reports.weekly.word') }}" class="button bg-[#18120f] text-ink hover:bg-black"><x-icon name="download" /> Unduh Word · Draf</a>
         </div>
         <span class="pointer-events-none absolute -top-16 right-8 text-[250px] leading-none font-extrabold tracking-[-0.1em] text-[#491609]/10 sm:text-[330px]" aria-hidden="true">{{ str_pad($period['week_number'], 2, '0', STR_PAD_LEFT) }}</span>
@@ -19,7 +19,7 @@
             <div class="border-r border-white/10 pl-2 last:border-0 sm:pl-0"><p class="text-2xl font-bold tracking-[-0.05em] sm:text-4xl">{{ $value }}</p><p class="mt-2 text-[10px] text-muted sm:text-xs">{{ $label }}</p></div>
         @endforeach
     </div>
-    <div class="mt-10 mb-7 flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow text-accent">One week, in focus.</p><h2 class="mt-3 text-3xl font-bold tracking-[-0.045em]">Hari demi hari.</h2></div><p class="max-w-xs text-xs leading-6 text-muted">Draf dapat diunduh setelah semua catatan minggu ini dirapikan. Isinya mengikuti kegiatan yang kamu simpan.</p></div>
+    <div class="mt-10 mb-7 flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow text-accent">One week, in focus</p><h2 class="mt-3 text-3xl font-bold tracking-[-0.045em]">Hari demi hari</h2></div><p class="max-w-xs text-xs leading-6 text-muted">Draf dapat diunduh setelah semua catatan minggu ini dirapikan. Isinya mengikuti kegiatan yang kamu simpan.</p></div>
     @if($totalNotes > $polishedNotes)
         <div class="alert border-accent/25 bg-accent/5 text-[#f2c0a9]">{{ $totalNotes - $polishedNotes }} catatan belum dirapikan. <a href="{{ route('activities.index') }}" class="font-bold underline underline-offset-4">Rapikan di halaman catatan</a> agar versi laporan siap digunakan.</div>
     @endif

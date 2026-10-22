@@ -4,11 +4,11 @@
     @php($today = now('Asia/Jakarta')->locale('id'))
     <section class="journal-hero reveal relative overflow-hidden rounded-[28px] px-6 pt-7 pb-9 sm:px-10 sm:pt-9 sm:pb-11 lg:px-12" aria-labelledby="page-title">
         <div class="relative z-10 flex items-center justify-between gap-4">
-            <p class="eyebrow text-[#491609]">A little progress, every day.</p>
+            <p class="eyebrow text-[#491609]">A little progress, every day</p>
             <span class="hidden rounded-full border border-[#491609]/30 px-3 py-1 text-[10px] font-semibold text-[#491609] sm:inline">MY INTERNSHIP JOURNAL</span>
         </div>
         <div class="relative z-10 mt-8 max-w-2xl sm:mt-9">
-            <h1 id="page-title" class="text-[clamp(2.35rem,11.5vw,5.8rem)] leading-[1.02] font-extrabold tracking-[-0.065em] text-[#fff6e9] sm:text-[clamp(3rem,6.3vw,5.8rem)]">Hari ini,<br>layak dicatat<span class="text-[#541b10]">.</span></h1>
+            <h1 id="page-title" class="text-[clamp(2.35rem,11.5vw,5.8rem)] leading-[1.02] font-extrabold tracking-[-0.065em] text-[#fff6e9] sm:text-[clamp(3rem,6.3vw,5.8rem)]">Hari ini,<br>layak dicatat</h1>
             <p class="mt-5 max-w-sm text-xs leading-6 font-medium text-[#481709] sm:text-sm">Pekerjaan boleh berlalu.<br>Cerita dan pembelajarannya tetap tinggal.</p>
             <div class="mt-7 flex flex-wrap gap-3">
                 <a href="#catatan-baru" class="button bg-[#18120f] text-ink hover:bg-black">Tulis kegiatan <x-icon name="pen" /></a>
@@ -51,18 +51,18 @@
         <aside class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1" aria-label="Jelajahi logbook">
             <a href="{{ route('reports.weekly') }}" class="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#e9e4d9] p-6 text-[#24211d] transition hover:bg-[#f7f3eb]">
                 <div class="flex justify-between"><span class="eyebrow text-[#756b5d]">The weekly edit</span><x-icon name="document" class="size-5" /></div>
-                <div class="mt-7 flex items-end justify-between gap-3"><div><h2 class="text-xl leading-tight font-bold tracking-[-0.04em]">Satu minggu.<br>Satu cerita utuh.</h2><p class="mt-3 text-[11px] leading-5 text-[#6a6258]">Baca rekap & unduh laporan Word.</p></div><span class="flex size-9 shrink-0 items-center justify-center rounded-full border border-black/20 transition group-hover:rotate-[-35deg]"><x-icon /></span></div>
+                <div class="mt-7 flex items-end justify-between gap-3"><div><h2 class="text-xl leading-tight font-bold tracking-[-0.04em]">Satu minggu<br>Satu cerita utuh</h2><p class="mt-3 text-[11px] leading-5 text-[#6a6258]">Baca rekap & unduh laporan Word.</p></div><span class="flex size-9 shrink-0 items-center justify-center rounded-full border border-black/20 transition group-hover:rotate-[-35deg]"><x-icon /></span></div>
             </a>
             <a href="{{ route('learning.index') }}" class="surface group flex flex-col justify-between p-6 transition hover:border-accent/40">
                 <div class="flex justify-between"><span class="eyebrow text-muted">Go a little deeper</span><x-icon name="book" class="size-5 text-accent" /></div>
-                <div class="mt-6 flex items-end justify-between gap-3"><div><h2 class="text-xl font-bold tracking-[-0.04em]">Kerja, lalu mengerti.</h2><p class="mt-3 text-[11px] leading-5 text-muted">Tujuan, proses, dan bekal seminar.</p></div><x-icon class="text-accent transition group-hover:translate-x-1" /></div>
+                <div class="mt-6 flex items-end justify-between gap-3"><div><h2 class="text-xl font-bold tracking-[-0.04em]">Kerja, lalu mengerti</h2><p class="mt-3 text-[11px] leading-5 text-muted">Tujuan, proses, dan bekal seminar.</p></div><x-icon class="text-accent transition group-hover:translate-x-1" /></div>
             </a>
         </aside>
     </div>
 
     <section class="mt-12 sm:mt-16" aria-labelledby="history-heading">
         <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
-            <div><p class="eyebrow text-accent">Your days, documented.</p><h2 id="history-heading" class="mt-3 text-3xl font-bold tracking-[-0.045em] sm:text-4xl">Jejak kegiatanmu</h2></div>
+            <div><p class="eyebrow text-accent">Your days, documented</p><h2 id="history-heading" class="mt-3 text-3xl font-bold tracking-[-0.045em] sm:text-4xl">Jejak kegiatanmu</h2></div>
             <span class="pill text-muted">{{ $activities->total() }} catatan tersimpan</span>
         </div>
         <div class="space-y-5">

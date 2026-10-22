@@ -13,7 +13,7 @@
         <div class="flex flex-wrap items-center justify-between gap-x-5 gap-y-4 border-b border-white/10 py-5 sm:py-6">
             <a href="{{ route('activities.index') }}" class="flex items-center gap-2.5 text-xl font-extrabold tracking-[-0.06em]" aria-label="Logbook, halaman catatan">
                 <span class="text-accent"><x-icon name="spark" class="size-7" /></span>
-                logbook<span class="-ml-2 text-accent">.</span>
+                logbook
             </a>
             <nav aria-label="Navigasi utama" class="order-3 flex w-full justify-between gap-1 rounded-full border border-white/10 p-1 sm:order-none sm:w-auto">
                 <a href="{{ route('activities.index') }}" class="nav-link flex-1" @if(request()->routeIs('activities.*')) aria-current="page" @endif><span class="hidden opacity-50 lg:inline">01</span> Catatan</a>
